@@ -11,12 +11,15 @@ public class Coins : MonoBehaviour
 
     }
 
-    void onTriggerEnter2D(Collider2D other)
+    private void Update()
     {
-        if (other.gameObject.CompareTag("coin"))
+        void OnTriggerEnter2D(Collider2D other)
         {
-            gm.coins += 1;
-            print(gm.coins);
+            if (other.gameObject.CompareTag("coin"))
+            {
+                gm.coins += 1;
+                print(gm.coins);
+            }
         }
     }
 }
