@@ -3,19 +3,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameManager", menuName = "Scriptable Objects/GameManager")]
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gm;
+    public static GameManager Gm;
 
     public int coins;
-
+    public int health;
     private void Awake()
     {
-        if (gm != null && gm != this)
+        if (Gm != null && Gm != this)
         {
             Destroy(gameObject);
         }
         else
         {
-            gm = this;
+            Gm = this;
             DontDestroyOnLoad(this.gameObject);
         }
     }
