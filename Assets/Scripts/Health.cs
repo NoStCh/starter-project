@@ -2,23 +2,19 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    GameManager gm;
+    GameManager Gm;
 
     private void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        Gm = FindAnyObjectByType<GameManager>();
 
     }
-
-    private void Update()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        void OnCollisionEnter2D(Collision2D other)
+        if (other.gameObject.CompareTag("Spikes"))
         {
-            if (other.gameObject.CompareTag("Health"))
-            {
-                gm.coins += 1;
-                print(gm.coins);
-            }
+            Gm.health += 1;
+            print(Gm.health);
         }
     }
 }

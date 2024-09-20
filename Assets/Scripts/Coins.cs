@@ -1,6 +1,4 @@
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "Coins", menuName = "Scriptable Objects/Coins")]
 public class Coins : MonoBehaviour
 {
     GameManager Gm;
@@ -8,19 +6,14 @@ public class Coins : MonoBehaviour
     private void Start()
     {
         Gm = FindAnyObjectByType<GameManager>();
-
     }
-
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        void OnTriggerEnter2D(Collision2D other)
+        if (other.gameObject.CompareTag("Coin"))
         {
-            if (other.gameObject.CompareTag("Coin"))
-            {
-                Gm.coins += 1;
-                Destroy(other.gameObject);
-                print(Gm.coins);
-            }
+            Gm.coins += 1;
+            Destroy(other.gameObject);
+            print(Gm.coins);
         }
     }
 }

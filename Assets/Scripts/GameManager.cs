@@ -1,6 +1,4 @@
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "GameManager", menuName = "Scriptable Objects/GameManager")]
 public class GameManager : MonoBehaviour
 {
     public static GameManager Gm;

@@ -45,6 +45,13 @@ public class PlayerController : MonoBehaviour
         yvector = ydirection * yspeed * Time.deltaTime;
         transform.Translate(0,yvector, 0);
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Wall"))
