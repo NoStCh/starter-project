@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Wall"))
         {
-            print("we got coin");
+            print("Wall");
         }
     }
     //for organization, put other built-in Unity functions here

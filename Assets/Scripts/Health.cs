@@ -3,7 +3,6 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     GameManager Gm;
-
     private void Start()
     {
         Gm = FindAnyObjectByType<GameManager>();
@@ -13,7 +12,7 @@ public class Health : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Spikes"))
         {
-            Gm.health += 1;
+            Gm.health -= 1;
             print(Gm.health);
         }
     }
