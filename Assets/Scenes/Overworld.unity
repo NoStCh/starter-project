@@ -84350,7 +84350,6 @@ GameObject:
   - component: {fileID: 1450754468}
   - component: {fileID: 1450754467}
   - component: {fileID: 1450754466}
-  - component: {fileID: 1450754465}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -84358,22 +84357,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1450754465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450754464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f7e039213a5412da4c22ecafddbab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsText: {fileID: 0}
-  healthText: {fileID: 0}
-  coins: 0
-  health: 0
 --- !u!114 &1450754466
 MonoBehaviour:
   m_ObjectHideFlags: 0
