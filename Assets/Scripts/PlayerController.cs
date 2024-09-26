@@ -59,11 +59,4 @@ public class PlayerController : MonoBehaviour
             print("Wall");
         }
     }
-    //for organization, put other built-in Unity functions here
-
-
-
-
-
-    //after all Unity functions, your own functions can go here
 }
