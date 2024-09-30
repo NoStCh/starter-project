@@ -1,6 +1,6 @@
 using UnityEngine;
 
-float Speed = 10;
+
 
 public class Projectile : MonoBehaviour
 {

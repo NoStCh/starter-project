@@ -1,14 +1,25 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Vector3 spawnPos;
+    public GameObject projectilePrefab;
     void Start()
     {
-        
+        spawnPos = new Vector3(transform.position.x, transform.position.y);
     }
 
-    // Update is called once per frame
+    private void OnTriggerStay(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameObject clone;
+            clone = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
+        }
+    }
+
     void Update()
     {
         
