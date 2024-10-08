@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime;
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
     float xdirection;
@@ -11,7 +7,8 @@ public class PlayerController : MonoBehaviour
     float ydirection;
     float yspeed;
     float yvector;
-
+    public float playerX;
+    public float playerY;
     public bool overworld; 
 
     private void Start()
@@ -38,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        playerX = transform.position.x;
+        playerY = transform.position.y;
+        
         xdirection = Input.GetAxis("Horizontal");
         xvector = xdirection * xspeed * Time.deltaTime;
         transform.Translate(xvector, 0, 0);

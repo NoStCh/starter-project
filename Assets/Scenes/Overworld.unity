@@ -39893,12 +39893,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2066015542}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &499190095 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1368334824}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &558832012
 GameObject:
   m_ObjectHideFlags: 0
@@ -40490,10 +40484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda0990dd8ac40f6b8610bba0ac00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 499190095}
-  firePoint: {fileID: 2108108684}
-  fireRate: 1
-  nextFireTime: 0
+  spawnPos: {x: 0, y: 0, z: 0}
+  projectilePrefab: {fileID: 0}
 --- !u!1001 &815955321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86177,7 +86169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108108684}
   m_Layer: 0
-  m_Name: firePoint
+  m_Name: CircleCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
