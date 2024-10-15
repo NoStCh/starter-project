@@ -40466,12 +40466,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1944564541}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &781059347 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4844124505973536318, guid: 54f2fe71921990e48b811a0b3b35835f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1944564541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &781059348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40484,8 +40478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda0990dd8ac40f6b8610bba0ac00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileClone: {fileID: 0}
   spawnPos: {x: 0, y: 0, z: 0}
-  projectilePrefab: {fileID: 0}
 --- !u!1001 &815955321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86006,11 +86000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4844124505973536318, guid: 54f2fe71921990e48b811a0b3b35835f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2108108684}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6040774585044851471, guid: 54f2fe71921990e48b811a0b3b35835f,
         type: 3}
@@ -86159,37 +86149,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c7343f050914c7787bbbe42c07b5b8, type: 3}
---- !u!1 &2108108683
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2108108684}
-  m_Layer: 0
-  m_Name: CircleCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2108108684
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108108683}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4086375, y: 6.8840265, z: -3.6606586}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 781059347}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2129303943
 PrefabInstance:
   m_ObjectHideFlags: 0
