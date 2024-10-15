@@ -1,32 +1,25 @@
-using System;
-using UnityEditor.Rendering;
 using UnityEngine;
-
 public class Projectile : MonoBehaviour
 {
     private Vector3 target;
-    public int speed;
     private PlayerController playerController;
+    public int speed = 8;
     private Vector3 current;
+    private double lifespan = 1.5;
     private Vector3 direction;
     
     void Start()
     {
-        speed = 5;
+        playerController = FindFirstObjectByType<PlayerController>();
         target = new Vector3(playerController.playerX, playerController.playerY, 0);
-        direction = (target - transform.position).normalized;
+        direction = ((target - transform.position).normalized) * speed;
     }
 
     void Update()
     {
-        Vector3 current = transform.position;
-        Vector3 newposition = Vector3.MoveTowards(current, target, speed * Time.deltaTime);
-        transform.position += speed * direction * Time.deltaTime;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        transform.position += (direction * Time.deltaTime);
+        lifespan -= Time.deltaTime;
+        if (lifespan < 0)
         {
             Destroy(gameObject);
         }
