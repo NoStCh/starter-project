@@ -1,16 +1,16 @@
 using UnityEngine;
-using Unity.Mathematics;
 public class Turret : MonoBehaviour
 {
     private float firerate;
     private double cooldown;
-    private GameObject player = null;
+    private GameObject player;
     public GameObject projectileClone;
     public Vector3 spawnPos;
     void Start()
     {
+        player = null;
         firerate = 1;
-        cooldown = 0.5;
+        cooldown = 5;
         spawnPos = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
     }
 
@@ -27,7 +27,7 @@ public class Turret : MonoBehaviour
             cooldown = firerate;
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         player = other.gameObject;
     }

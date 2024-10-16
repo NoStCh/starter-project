@@ -2,10 +2,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Vector3 target;
-    private PlayerController playerController;
+    public PlayerController playerController;
     public int speed = 8;
     private Vector3 current;
-    private double lifespan = 1.5;
+    private double lifespan = 35;
     private Vector3 direction;
     
     void Start()
