@@ -40478,7 +40478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda0990dd8ac40f6b8610bba0ac00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileClone: {fileID: 0}
+  projectileClone: {fileID: 1907455155}
   spawnPos: {x: 0, y: 0, z: 0}
 --- !u!58 &781059349
 CircleCollider2D:
@@ -84402,6 +84402,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4327165216284067482, guid: d181d0f6b0e116b4298e1e64b89f707e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,
         type: 3}
       propertyPath: m_Name
@@ -84410,12 +84415,12 @@ PrefabInstance:
     - target: {fileID: 7101103389178533185, guid: d181d0f6b0e116b4298e1e64b89f707e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -12.69
       objectReference: {fileID: 0}
     - target: {fileID: 7101103389178533185, guid: d181d0f6b0e116b4298e1e64b89f707e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -11.85
       objectReference: {fileID: 0}
     - target: {fileID: 7101103389178533185, guid: d181d0f6b0e116b4298e1e64b89f707e,
         type: 3}
@@ -84460,7 +84465,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1907455156}
   m_SourcePrefab: {fileID: 100100000, guid: d181d0f6b0e116b4298e1e64b89f707e, type: 3}
 --- !u!1 &1450754464
 GameObject:
@@ -84597,6 +84606,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de1c95869d344bd9b892f4f9b393040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1510635576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5774960653562304022, guid: bc139d8bb8dee439490b05712200dfee,
+    type: 3}
+  m_PrefabInstance: {fileID: 621278199}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510635568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6dd32abcac042189a319a30dc194bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1545437469
@@ -85971,6 +85992,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1907455155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368334824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1907455156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907455155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c335db7b49c4db9958ae51120f4112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1510635576}
+  speed: 8
 --- !u!1001 &1944564541
 PrefabInstance:
   m_ObjectHideFlags: 0
