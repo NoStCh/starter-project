@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class Projectile : MonoBehaviour
 {
@@ -5,7 +6,7 @@ public class Projectile : MonoBehaviour
     public PlayerController playerController;
     public int speed = 8;
     private Vector3 current;
-    private double lifespan = 35;
+    private double lifespan = 20;
     private Vector3 direction;
     
     void Start()
@@ -23,5 +24,10 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
     }
 }

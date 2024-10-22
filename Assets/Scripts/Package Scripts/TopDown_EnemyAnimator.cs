@@ -5,13 +5,14 @@ using UnityEngine;
 public class TopDown_EnemyAnimator : MonoBehaviour
 {
     public bool IsAttacking { get; private set; }
-
+    public Enemy emenemey;
     Vector3 prevPos;
     Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        emenemey = FindFirstObjectByType<Enemy>();
         anim = GetComponent<Animator>();
     }
 
@@ -45,7 +46,7 @@ public class TopDown_EnemyAnimator : MonoBehaviour
 
         prevPos = transform.position;
 
-        if (Input.GetMouseButton(0))
+        if (emenemey.state == 3)
         {
             Attack();
         }
