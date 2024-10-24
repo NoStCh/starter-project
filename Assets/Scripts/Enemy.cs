@@ -11,11 +11,11 @@ public class Enemy : MonoBehaviour
     private float distance;
     public float state;
     private float changetime;
-    private float iframes;
+    private Animator animator;
+    private AnimatorStateInfo stateInfo;
 
     void Start()
     {
-        iframes = 750;
         playerController = FindFirstObjectByType<PlayerController>();
         gameManager = FindFirstObjectByType<GameManager>();
         changetime = 300;
@@ -45,17 +45,17 @@ public class Enemy : MonoBehaviour
         target = new Vector3(playerController.playerX, playerController.playerY, 0);
         if (state == 2)
         {
-            iframes -= 1;
             direction = ((target - transform.position).normalized) * 3;
             transform.position += (direction * Time.deltaTime);
         }
 
         if (state == 3)
         {
-            iframes -= 1;
-            if (iframes < 1)
+            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            
+            if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 1.0f)
             {
-                iframes = 750;
+               
                 gameManager.health -= 1;
             }
 

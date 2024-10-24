@@ -41548,6 +41548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6eb48f9c9c845c6aa81d9ba3cfd6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
 --- !u!1001 &1313864238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84497,10 +84498,20 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 4327165216284067482, guid: d181d0f6b0e116b4298e1e64b89f707e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,
         type: 3}
       propertyPath: m_Name
       value: Turret_Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 7101103389178533185, guid: d181d0f6b0e116b4298e1e64b89f707e,
         type: 3}
@@ -86170,8 +86181,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -28657926046577547, guid: 54f2fe71921990e48b811a0b3b35835f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

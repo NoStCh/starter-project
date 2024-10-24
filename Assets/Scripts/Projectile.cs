@@ -8,9 +8,10 @@ public class Projectile : MonoBehaviour
     private Vector3 current;
     private double lifespan = 20;
     private Vector3 direction;
-    
+    GameManager Gm;
     void Start()
     {
+        Gm = FindAnyObjectByType<GameManager>();
         playerController = FindFirstObjectByType<PlayerController>();
         target = new Vector3(playerController.playerX, playerController.playerY, 0);
         direction = ((target - transform.position).normalized) * speed;
@@ -28,6 +29,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            Gm.coins -= 1;
+            print(Gm.coins);
+        }
     }
 }
