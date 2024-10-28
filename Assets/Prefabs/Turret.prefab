@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4844124505973536318}
   - component: {fileID: -8321157105715108983}
-  - component: {fileID: -4632701105164264332}
   - component: {fileID: -28657926046577547}
   m_Layer: 0
   m_Name: Turret
@@ -89,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4632701105164264332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6040774585044851471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbda0990dd8ac40f6b8610bba0ac00ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileClone: {fileID: 0}
-  spawnPos: {x: 0, y: 0, z: 0}
 --- !u!61 &-28657926046577547
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
     private Vector3 target;
     private Vector3 current;
     private Vector3 direction;
-    private GameManager gameManager;
-    private PlayerController playerController;
+    GameManager GM;
+    PlayerController playerController;
     private float distance;
     public float state;
     private float changetime;
@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
-        gameManager = FindFirstObjectByType<GameManager>();
+        GM = FindFirstObjectByType<GameManager>();
+        animator = FindFirstObjectByType<Animator>();
         changetime = 300;
         current = transform.position;
         target = new Vector3(playerController.playerX, playerController.playerY, 0);
@@ -56,7 +57,7 @@ public class Enemy : MonoBehaviour
             if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 1.0f)
             {
                
-                gameManager.health -= 1;
+                GM.health -= 1;
             }
 
             direction = ((target - transform.position).normalized * 3);

@@ -9,7 +9,7 @@ public class Turret : MonoBehaviour
     void Start()
     {
         player = null;
-        firerate = 1;
+        firerate = 5;
         cooldown = 5;
         spawnPos = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
     }

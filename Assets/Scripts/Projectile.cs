@@ -31,8 +31,8 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Projectile"))
         {
-            Gm.coins -= 1;
-            print(Gm.coins);
+            Gm.health -= 1;
+            print("Ahh");
         }
     }
 }
