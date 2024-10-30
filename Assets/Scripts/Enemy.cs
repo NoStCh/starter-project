@@ -6,18 +6,21 @@ public class Enemy : MonoBehaviour
     private Vector3 target;
     private Vector3 current;
     private Vector3 direction;
-    GameManager GM;
+    GameManager Gm;
     PlayerController playerController;
     private float distance;
     public float state;
     private float changetime;
     private Animator animator;
     private AnimatorStateInfo stateInfo;
+    public GameObject AxeItem;
+    private Vector3 SpawnPos;
+    
 
     void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
-        GM = FindFirstObjectByType<GameManager>();
+        Gm = FindFirstObjectByType<GameManager>();
         animator = FindFirstObjectByType<Animator>();
         changetime = 300;
         current = transform.position;
@@ -57,11 +60,13 @@ public class Enemy : MonoBehaviour
             if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 1.0f)
             {
                
-                GM.health -= 1;
+                Gm.health -= 1;
             }
 
             direction = ((target - transform.position).normalized * 3);
             transform.position += (direction * Time.deltaTime) / 2;
+
+            
         }
 
         current = transform.position;
@@ -76,5 +81,17 @@ public class Enemy : MonoBehaviour
 
             transform.position += ((direction * Time.deltaTime) * 0.06f);
         }
+        
+        SpawnPos = new Vector3(transform.position.x, transform.position.y, 0);
+        
+        if (Gm.Mealth < 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(AxeItem, SpawnPos, Quaternion.identity);
     }
 }

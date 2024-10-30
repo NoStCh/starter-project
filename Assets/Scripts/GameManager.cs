@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     
     public int coins;
     public int health;
+    public int Mealth;
     private void Awake()
     {
         health = 100;
+        Mealth = 10;
         if (Gm != null && Gm != this)
         {
             Destroy(gameObject);
