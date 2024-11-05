@@ -13,12 +13,13 @@ public class Enemy : MonoBehaviour
     private float changetime;
     private float Tim;
     private float Tim1;
-    public GameObject AxeItem;
+    Axe AxeItem;
     private Vector3 SpawnPos;
     
 
     void Start()
     {
+        AxeItem = FindFirstObjectByType<Axe>();
         playerController = FindFirstObjectByType<PlayerController>();
         Gm = FindFirstObjectByType<GameManager>();
         changetime = 300;
