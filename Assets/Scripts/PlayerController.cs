@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public float playerX;
     public float playerY;
     public bool overworld; 
-
     private void Start()
     {
         GetComponentInChildren<TopDown_AnimatorController>().enabled = overworld;

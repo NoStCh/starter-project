@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
     private float distance;
     public float state;
     private float changetime;
-    private Animator animator;
-    private AnimatorStateInfo stateInfo;
+    private float Tim;
+    private float Tim1;
     public GameObject AxeItem;
     private Vector3 SpawnPos;
     
@@ -21,14 +21,17 @@ public class Enemy : MonoBehaviour
     {
         playerController = FindFirstObjectByType<PlayerController>();
         Gm = FindFirstObjectByType<GameManager>();
-        animator = FindFirstObjectByType<Animator>();
         changetime = 300;
         current = transform.position;
         target = new Vector3(playerController.playerX, playerController.playerY, 0);
+        Tim = 500f;
+        Tim1 = 500f;
     }
 
     void Update()
     {
+        Tim -= 0.5f;
+        Tim1 -= 1f; 
         distance = Vector3.Distance(gameObject.transform.position, target);
         if (distance < 4.5)
         {
@@ -55,18 +58,20 @@ public class Enemy : MonoBehaviour
 
         if (state == 3)
         {
-            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            
-            if (stateInfo.IsName("Attack") && stateInfo.normalizedTime < 1.0f)
+            if (Tim <= 0f)
             {
-               
                 Gm.health -= 1;
+                Tim = 500f;
             }
 
             direction = ((target - transform.position).normalized * 3);
             transform.position += (direction * Time.deltaTime) / 2;
-
-            
+        }
+        
+        if (Input.GetMouseButton(0) && Tim1 <= 0f)
+        {
+            Gm.Mealth -= 1;
+            Tim1 = 500f;
         }
 
         current = transform.position;
@@ -84,14 +89,10 @@ public class Enemy : MonoBehaviour
         
         SpawnPos = new Vector3(transform.position.x, transform.position.y, 0);
         
-        if (Gm.Mealth < 1)
+       if (Gm.Mealth < 1) 
         {
+            Instantiate(AxeItem, SpawnPos, Quaternion.identity);
             Destroy(gameObject);
         }
-    }
-
-    private void OnDestroy()
-    {
-        Instantiate(AxeItem, SpawnPos, Quaternion.identity);
     }
 }
