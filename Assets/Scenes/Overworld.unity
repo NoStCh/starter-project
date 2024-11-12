@@ -41549,6 +41549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  hasaxe: 0
 --- !u!1001 &1313864238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85393,6 +85394,7 @@ GameObject:
   - component: {fileID: 1665360716}
   - component: {fileID: 1665360718}
   - component: {fileID: 1665360717}
+  - component: {fileID: 1665360719}
   m_Layer: 0
   m_Name: No Collision Door Removed
   m_TagString: Untagged
@@ -85599,6 +85601,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1665360719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665360715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2de08ec10045c990f69e38d707795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enem: {fileID: 0}
 --- !u!4 &1825907749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281311786053241907, guid: 69c7343f050914c7787bbbe42c07b5b8,
@@ -85687,6 +85702,7 @@ GameObject:
   - component: {fileID: 1861919210}
   - component: {fileID: 1861919209}
   - component: {fileID: 1861919208}
+  - component: {fileID: 1861919213}
   m_Layer: 0
   m_Name: Collision Door Removed
   m_TagString: Untagged
@@ -86093,6 +86109,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1861919213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861919206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2de08ec10045c990f69e38d707795c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enem: {fileID: 0}
 --- !u!1 &1907455155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5790822057519619805, guid: d181d0f6b0e116b4298e1e64b89f707e,

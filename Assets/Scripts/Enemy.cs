@@ -13,15 +13,17 @@ public class Enemy : MonoBehaviour
     private float changetime;
     private float Tim;
     private float Tim1;
-    Axe AxeItem;
-    private Vector3 SpawnPos;
+    Door D;
+    /**public GameObject AxeItem;
+    private Vector3 SpawnPos;**/
     
 
     void Start()
     {
-        AxeItem = FindFirstObjectByType<Axe>();
+        D.hasaxe = false;
         playerController = FindFirstObjectByType<PlayerController>();
         Gm = FindFirstObjectByType<GameManager>();
+        D = FindFirstObjectByType<Door>();
         changetime = 300;
         current = transform.position;
         target = new Vector3(playerController.playerX, playerController.playerY, 0);
@@ -88,11 +90,12 @@ public class Enemy : MonoBehaviour
             transform.position += ((direction * Time.deltaTime) * 0.06f);
         }
         
-        SpawnPos = new Vector3(transform.position.x, transform.position.y, 0);
+        /**SpawnPos = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);**/
         
-       if (Gm.Mealth < 1) 
-        {
-            Instantiate(AxeItem, SpawnPos, Quaternion.identity);
+       if (Gm.Mealth < 1)
+       {
+            D.hasaxe = true;
+            /**Instantiate(AxeItem, SpawnPos, Quaternion.identity);**/
             Destroy(gameObject);
         }
     }
