@@ -7,17 +7,13 @@ public class Enemy : MonoBehaviour
     private Vector3 current;
     private Vector3 direction;
     GameManager Gm;
+    Door D;
     PlayerController playerController;
     private float distance;
     public float state;
     private float changetime;
     private float Tim;
     private float Tim1;
-    Door D;
-    /**public GameObject AxeItem;
-    private Vector3 SpawnPos;**/
-    
-
     void Start()
     {
         D.hasaxe = false;

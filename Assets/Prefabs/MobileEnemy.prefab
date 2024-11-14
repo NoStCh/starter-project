@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4668079526467658351}
   - component: {fileID: 2399072710900510365}
+  - component: {fileID: -4902864856577838835}
   - component: {fileID: 1996527365673187554}
   m_Layer: 0
   m_Name: MobileEnemy
@@ -80,6 +81,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.72, y: 1.14}
   m_EdgeRadius: 0
+--- !u!114 &-4902864856577838835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736838050167469039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6eb48f9c9c845c6aa81d9ba3cfd6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!50 &1996527365673187554
 Rigidbody2D:
   serializedVersion: 5
@@ -230,3 +244,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd8a18f0229a499da6a032e83043ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emenemey: {fileID: 0}
