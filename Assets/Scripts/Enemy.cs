@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     private float changetime;
     private float Tim;
     private float Tim1;
-    public bool Plat;
+    public bool overworld;
 
     public float Vel;
     public float length;
@@ -24,9 +24,9 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        GetComponentInChildren<TopDown_AnimatorController>().enabled = !Plat;
-        GetComponentInChildren<Platformer_AnimatorController>().enabled = Plat;
-        if (!Plat)
+        GetComponentInChildren<TopDown_AnimatorController>().enabled = overworld;
+        GetComponentInChildren<Platformer_AnimatorController>().enabled = !overworld;
+        if (overworld)
         {
             D.hasaxe = false;
             playerController = FindFirstObjectByType<PlayerController>();
@@ -40,14 +40,14 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Vel = 0;
+            Vel = 0f;
             collider2d = GetComponent<Collider2D>();
         }
     }
 
     void Update()
     {
-        if (!Plat)
+        if (overworld)
         {
             Tim -= 0.5f;
             Tim1 -= 1f;
@@ -118,7 +118,7 @@ public class Enemy : MonoBehaviour
         else
         {
             Vel += Random.Range(-100, 100) / 100;
-            transform.Translate(Vel, 0, 0);
+            transform.Translate(Vel/10 * Time.deltaTime,0,0);
             
             Vector2 leftRayOrigin = new Vector2(transform.position.x - collider2d.bounds.extents.x, transform.position.y);
             Vector2 rightRayOrigin = new Vector2(transform.position.x + collider2d.bounds.extents.x, transform.position.y);
