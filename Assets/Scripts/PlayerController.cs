@@ -3,10 +3,10 @@ public class PlayerController : MonoBehaviour
 {
     float xdirection;
     float xspeed;
-    float xvector;
+    public float xvector;
     float ydirection;
     float yspeed;
-    float yvector;
+    public float yvector;
     public float playerX;
     public float playerY;
     public bool overworld; 

@@ -4,6 +4,7 @@ public class PlayerController2 : MonoBehaviour
 {
     Collider2D collider2d;
     Rigidbody2D rb;
+    PlayerController PC;
     public float length;
     public int jump;
     public bool slam;
@@ -18,6 +19,14 @@ public class PlayerController2 : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            slam = true;
+        }
+        else
+        {
+            slam = false;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = 1;  // Set jump flag when Space is pressed
@@ -30,8 +39,8 @@ public class PlayerController2 : MonoBehaviour
         // Raycasts to check if the player is grounded
         Vector2 leftRayOrigin = new Vector2(transform.position.x - collider2d.bounds.extents.x, transform.position.y);
         Vector2 rightRayOrigin = new Vector2(transform.position.x + collider2d.bounds.extents.x, transform.position.y);
-        Vector2 lRayOrigin = new Vector2(transform.position.x + collider2d.bounds.extents.x + 0.1f, transform.position.y - 0.8f);
-        Vector2 rRayOrigin = new Vector2(transform.position.x + collider2d.bounds.extents.x + 0.1f, transform.position.y - 0.8f);
+        Vector2 lRayOrigin = new Vector2(transform.position.x - collider2d.bounds.extents.x * 1.5f - 0.2f, transform.position.y - 0.8f);
+        Vector2 rRayOrigin = new Vector2(transform.position.x + collider2d.bounds.extents.x + 0.4f, transform.position.y - 0.8f);
 
         // Perform the raycasts downward
         RaycastHit2D leftRay = Physics2D.Raycast(leftRayOrigin, Vector2.down, length);
@@ -41,18 +50,20 @@ public class PlayerController2 : MonoBehaviour
         // Draw the rays for debugging (only draw in Scene view, not in game)
         Debug.DrawRay(leftRayOrigin, Vector2.down * length, Color.red);
         Debug.DrawRay(rightRayOrigin, Vector2.down * length, Color.red);
-        Debug.DrawRay(lRayOrigin, Vector2.left * length, Color.red);
-        Debug.DrawRay(lRayOrigin, Vector2.left * length, Color.red);
+        Debug.DrawRay(lRayOrigin, Vector2.left * (length), Color.red);
+        Debug.DrawRay(rRayOrigin, Vector2.right * (length), Color.red);
 
-        if ((leftRay.collider != null || rightRay.collider != null) && (lhorzRay.collider != null || rhorzRay.collider != null) && slam)
+        if ((leftRay.collider != null || rightRay.collider != null) && (lhorzRay.collider != null || rhorzRay.collider != null) && slam == true)
         {
             if (lhorzRay.collider != null)
             {
-                
+                PC.xvector += 2f;
+                PC.yvector += 2f;
             }
             else
             {
-                a
+                PC.xvector -= 2f;
+                PC.yvector += 2f;
             }
         }
         
